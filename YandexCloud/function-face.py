@@ -44,7 +44,7 @@ def handler(event, context):
         endpoint_url='https://message-queue.api.cloud.yandex.net',
         region_name='ru-central1'
     )
-    queue_url = queue_client.get_queue_url(QueueName="vvot12-tasks")['QueueUrl']
+    queue_url = queue_client.get_queue_url(QueueName="vvot39-tasks")['QueueUrl']
     print('Created queue url is "{}"'.format(queue_url))
 
     for face in response.json()['results'][0]['results'][0]['faceDetection']['faces']:
