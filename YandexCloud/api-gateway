@@ -9,7 +9,7 @@ paths:
     get:
       x-yc-apigateway-integration:
         type: object_storage
-        bucket: itis-2022-2023-vvot12-faces
+        bucket: itis-2022-2023-vvot39-faces
         object: '{file}'
       parameters:
       - explode: false
@@ -24,7 +24,7 @@ paths:
     get:
       x-yc-apigateway-integration:
         type: object_storage
-        bucket: itis-2022-2023-vvot12-photos
+        bucket: itis-2022-2023-vvot39-photos
         object: '{file}'
       parameters:
       - explode: false
