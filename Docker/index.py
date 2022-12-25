@@ -38,8 +38,8 @@ async def hello(request):
     im.crop((x1, y1, x2, y2)).save(photo, quality=95)
     session = boto3.session.Session(region_name='ru-central1')
     s3 = session.client(
-        aws_access_key_id='YCAJEOAnn1nZwzPi40w0BvVEo',
-        aws_secret_access_key='YCNXQTJp60CsHUWCQwe_DWTu2vQX_l6uQ10A54Wv',
+        aws_access_key_id='', #TODO get key-id
+        aws_secret_access_key='', #TODO get secret-key
         service_name='s3',
         endpoint_url='https://storage.yandexcloud.net',
         region_name='ru-central1'
@@ -47,7 +47,7 @@ async def hello(request):
     face = str(request.json['messages'][0]['details']['message']['message_id']) + str(photo)
     s3.upload_file(photo, new_bucket, face)
 
-    ydb_client = session.client('dynamodb', endpoint_url='https://docapi.serverless.yandexcloud.net/ru-central1/b1g71e95h51okii30p25/etnig856uuujqnekk95m', aws_access_key_id='YCAJEOAnn1nZwzPi40w0BvVEo', aws_secret_access_key='YCNXQTJp60CsHUWCQwe_DWTu2vQX_l6uQ10A54Wv')
+    ydb_client = session.client('dynamodb', endpoint_url='https://docapi.serverless.yandexcloud.net/ru-central1/b1g71e95h51okii30p25/etnig856uuujqnekk95m', aws_access_key_id='', aws_secret_access_key='') #TODO key_id, secret-key
 
     table = ydb_client.create_table(
       TableName='task2',
